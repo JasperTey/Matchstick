@@ -1,0 +1,52 @@
+{
+    "name": "vio/matchstick",
+    "description": "Matchstick",
+    "license": "license",
+    "authors": [
+        {
+            "name": "Jasper Tey",
+            "email": "jasper@lunarstorm.ca",
+            "homepage": ""
+        }
+    ],
+    "homepage": "https://bitbucket.org/lunarstorm/matchstick",
+    "keywords": [
+        "Laravel",
+        "Matchstick",
+        "Lunarstorm"
+    ],
+    "require": {
+        "illuminate/container": "^8",
+        "illuminate/config": "^8",
+        "illuminate/auth": "^8",
+        "illuminate/console": "^8",
+        "illuminate/database": "^8",
+        "illuminate/events": "^8",
+        "illuminate/notifications": "^8",
+        "illuminate/support": "^8",
+        "illuminate/filesystem": "^8",
+        "illuminate/translation": "^8",
+        "illuminate/validation": "^8",
+        "illuminate/pagination": "^8",
+        "illuminate/view": "^8",
+        "vio/pinball": "@dev"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Vio\\Matchstick\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vio\\Matchstick\\Tests\\": "tests"
+        }
+    },
+    "extra": {},
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://bitbucket.org/lunarstorm/pinball.git"
+        }
+    ]
+}
