@@ -29,6 +29,8 @@
         "illuminate/validation": "^8",
         "illuminate/pagination": "^8",
         "illuminate/view": "^8",
+        "illuminate/queue": "^8",
+        "illuminate/encryption": "^8",
         "vio/pinball": "@dev"
     },
     "require-dev": {},
