@@ -19,6 +19,7 @@ class View
 
         // Configuration
         $pathsToTemplates = config('view.paths.templates', []);
+        $namespacedPaths = config('view.namespaces', []);
         $pathToCompiledTemplates = config('view.paths.compiled', []);
 
         // Dependencies
@@ -37,6 +38,11 @@ class View
         $viewFactory = new \Illuminate\View\Factory($viewResolver, $viewFinder, $eventDispatcher);
         $viewFactory->setContainer($container);
 
+        // Add namespaces
+        foreach($namespacedPaths as $name => $hints){
+            $viewFinder->addNamespace($name, $hints);
+        }
+
         $container->instance(\Illuminate\Contracts\View\Factory::class, $viewFactory);
         $container->alias(
             \Illuminate\Contracts\View\Factory::class,
@@ -48,7 +54,7 @@ class View
                 }
             })::getFacadeAccessor()
         );
-        
+
         $container->instance(\Illuminate\View\Compilers\BladeCompiler::class, $bladeCompiler);
         $container->alias(
             \Illuminate\View\Compilers\BladeCompiler::class,
@@ -64,10 +70,15 @@ class View
         static::$factory = $viewFactory;
 
         if (!function_exists('view')) {
-            function view(...$args)
+            function view($view = null, $data = [], $mergeData = [])
             {
                 $factory = View::$factory;
-                return $factory->make(...$args);
+
+                if (func_num_args() === 0) {
+                    return $factory;
+                }
+
+                return $factory->make($view, $data, $mergeData);
             }
         }
     }
