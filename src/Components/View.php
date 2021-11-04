@@ -39,7 +39,7 @@ class View
         $viewFactory->setContainer($container);
 
         // Add namespaces
-        foreach($namespacedPaths as $name => $hints){
+        foreach ($namespacedPaths as $name => $hints) {
             $viewFinder->addNamespace($name, $hints);
         }
 
@@ -68,18 +68,5 @@ class View
         );
 
         static::$factory = $viewFactory;
-
-        if (!function_exists('view')) {
-            function view($view = null, $data = [], $mergeData = [])
-            {
-                $factory = View::$factory;
-
-                if (func_num_args() === 0) {
-                    return $factory;
-                }
-
-                return $factory->make($view, $data, $mergeData);
-            }
-        }
     }
 }

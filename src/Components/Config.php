@@ -14,7 +14,7 @@ class Config
     public static function bootstrap()
     {
         $app = App::getInstance();
-        
+
         /**
          * Discover config files inside the base config dir
          */
@@ -39,12 +39,5 @@ class Config
         $app->singleton('config', function () use ($repo) {
             return $repo;
         });
-
-        if (!function_exists('config')) {
-            function config(...$args)
-            {
-                return ComponentsConfig::$repository->get(...$args);
-            }
-        }
     }
 }
