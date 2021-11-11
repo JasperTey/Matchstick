@@ -6,6 +6,7 @@ use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\ConnectionResolver;
 use Illuminate\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Facades\DB;
 use Vio\Matchstick\App;
 
@@ -33,7 +34,9 @@ class Database
         $resolver = new ConnectionResolver();
         $resolver->addConnection('default', $conn);
         $resolver->setDefaultConnection('default');
+
         Model::setConnectionResolver($resolver);
+        Model::setEventDispatcher(new Dispatcher($app));
 
         class_alias(DB::class, 'DB');
 
