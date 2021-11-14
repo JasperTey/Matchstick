@@ -16,8 +16,15 @@ class Matchstick
         return Config::$dir = $dir;
     }
 
-    public static function init()
+    public static function init($config = [])
     {
+        $defaults = [
+            'config_dir' => null
+        ];
+        $config += $defaults;
+
+        static::setConfigDir($config['config_dir']);
+
         $app = App::getInstance();
         Facade::setFacadeApplication($app);
 
@@ -28,10 +35,5 @@ class Matchstick
         Queue::bootstrap();
 
         return true;
-    }
-
-    public static function strike()
-    {
-        return static::init();
     }
 }
