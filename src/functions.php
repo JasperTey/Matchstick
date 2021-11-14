@@ -1,7 +1,7 @@
 <?php
 
-use Vio\Matchstick\Components\Config;
-use Vio\Matchstick\Components\View;
+use Matchstick\Components\Config;
+use Matchstick\Components\View;
 
 if (!function_exists('view')) {
     function view($view = null, $data = [], $mergeData = [])

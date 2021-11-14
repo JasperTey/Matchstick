@@ -36,7 +36,7 @@
     "require-dev": {},
     "autoload": {
         "psr-4": {
-            "JasperTey\\Matchstick\\": "src/"
+            "Matchstick\\": "src/"
         },
         "files": [
             "src/functions.php"
@@ -44,7 +44,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "JasperTey\\Matchstick\\Tests\\": "tests"
+            "Matchstick\\Tests\\": "tests"
         }
     },
     "extra": {},

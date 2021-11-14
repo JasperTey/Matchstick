@@ -4,7 +4,7 @@ use Illuminate\Database\ConnectionResolver;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Events\EventServiceProvider;
 use Illuminate\Queue\Capsule\Manager as Queue;
-use Vio\Matchstick\App;
+use Matchstick\App;
 
 $container = App::getInstance();
 

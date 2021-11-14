@@ -1,6 +1,6 @@
 <?php
 
-namespace Vio\Matchstick;
+namespace Matchstick;
 
 use Illuminate\Container\Container;
 

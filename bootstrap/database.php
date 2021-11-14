@@ -5,7 +5,7 @@ use Illuminate\Database\ConnectionResolver;
 use Illuminate\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Vio\Matchstick\App;
+use Matchstick\App;
 
 $app = App::getInstance();
 

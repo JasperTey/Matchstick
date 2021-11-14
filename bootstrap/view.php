@@ -1,6 +1,6 @@
 <?php
 
-use Vio\Matchstick\App;
+use Matchstick\App;
 
 $container = App::getInstance();
 

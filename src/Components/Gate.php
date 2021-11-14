@@ -1,10 +1,10 @@
 <?php
 
-namespace Vio\Matchstick\Components;
+namespace Matchstick\Components;
 
 use Illuminate\Auth\Access\Gate as AccessGate;
 use lithium\security\Auth;
-use Vio\Matchstick\App;
+use Matchstick\App;
 
 class Gate
 {

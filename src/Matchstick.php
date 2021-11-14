@@ -1,13 +1,13 @@
 <?php
 
-namespace Vio\Matchstick;
+namespace Matchstick;
 
 use Illuminate\Support\Facades\Facade;
-use Vio\Matchstick\Components\Config;
-use Vio\Matchstick\Components\Database;
-use Vio\Matchstick\Components\Gate;
-use Vio\Matchstick\Components\Queue;
-use Vio\Matchstick\Components\View;
+use Matchstick\Components\Config;
+use Matchstick\Components\Database;
+use Matchstick\Components\Gate;
+use Matchstick\Components\Queue;
+use Matchstick\Components\View;
 
 class Matchstick
 {

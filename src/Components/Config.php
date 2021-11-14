@@ -1,10 +1,10 @@
 <?php
 
-namespace Vio\Matchstick\Components;
+namespace Matchstick\Components;
 
 use Illuminate\Config\Repository;
-use Vio\Matchstick\App;
-use Vio\Matchstick\Components\Config as ComponentsConfig;
+use Matchstick\App;
+use Matchstick\Components\Config as ComponentsConfig;
 
 class Config
 {

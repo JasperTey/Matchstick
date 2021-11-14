@@ -1,8 +1,8 @@
 <?php
 
-namespace Vio\Matchstick\Components;
+namespace Matchstick\Components;
 
-use Vio\Matchstick\App;
+use Matchstick\App;
 use Illuminate\Database\ConnectionResolver;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Events\EventServiceProvider;

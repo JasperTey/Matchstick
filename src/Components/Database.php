@@ -1,6 +1,6 @@
 <?php
 
-namespace Vio\Matchstick\Components;
+namespace Matchstick\Components;
 
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\ConnectionResolver;
@@ -8,7 +8,7 @@ use Illuminate\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Facades\DB;
-use Vio\Matchstick\App;
+use Matchstick\App;
 
 class Database
 {

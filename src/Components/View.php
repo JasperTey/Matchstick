@@ -1,8 +1,8 @@
 <?php
 
-namespace Vio\Matchstick\Components;
+namespace Matchstick\Components;
 
-use Vio\Matchstick\App;
+use Matchstick\App;
 
 class View
 {
