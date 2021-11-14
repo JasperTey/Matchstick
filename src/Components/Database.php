@@ -19,13 +19,14 @@ class Database
 
         // Database information
         $settings = [
-            'driver' => 'mysql',
-            'host' => getenv('DB_HOST'),
-            'database' => getenv('DB_NAME'),
-            'username' => getenv('DB_USER'),
-            'password' => getenv('DB_PASS'),
-            'collation' => 'utf8_general_ci',
-            'prefix' => getenv('DB_PREFIX') ?: '',
+            'driver' => env('DB_DRIVER', 'mysql'),
+            'host' => env('DB_HOST'),
+            'port' => env('DB_PORT'),
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'collation' => env('DB_COLLATION', 'utf8_general_ci'),
+            'prefix' => env('DB_PREFIX', ''),
         ];
 
         // Bootstrap Eloquent ORM

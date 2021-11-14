@@ -31,7 +31,8 @@
         "illuminate/view": "^8",
         "illuminate/queue": "^8",
         "illuminate/encryption": "^8",
-        "vio/pinball": "@dev"
+        "vio/pinball": "@dev",
+        "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {},
     "autoload": {
@@ -39,6 +40,7 @@
             "Matchstick\\": "src/"
         },
         "files": [
+            "src/index.php",
             "src/functions.php"
         ]
     },
@@ -51,7 +53,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/JasperTey/Matchstick.git"
+            "url": "https://bitbucket.org/lunarstorm/pinball.git"
         }
     ]
 }

@@ -22,3 +22,10 @@ if (!function_exists('config')) {
         return Config::$repository->get(...$args);
     }
 }
+
+if (!function_exists('env')) {
+    function env($key, $default = null)
+    {
+        return data_get($_ENV, $key, $default);
+    }
+}

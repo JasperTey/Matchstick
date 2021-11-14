@@ -2,6 +2,7 @@
 
 namespace Matchstick;
 
+use Dotenv\Dotenv;
 use Illuminate\Support\Facades\Facade;
 use Matchstick\Components\Config;
 use Matchstick\Components\Database;
@@ -19,9 +20,15 @@ class Matchstick
     public static function init($config = [])
     {
         $defaults = [
+            'base_dir' => null,
             'config_dir' => null
         ];
         $config += $defaults;
+
+        if($config['base_dir']){
+            $dotenv = Dotenv::createImmutable($config['base_dir']);
+            $dotenv->safeLoad();
+        }
 
         static::setConfigDir($config['config_dir']);
 
