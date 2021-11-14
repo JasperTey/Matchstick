@@ -38,7 +38,7 @@ class Database
         Model::setConnectionResolver($resolver);
         Model::setEventDispatcher(new Dispatcher($app));
 
-        class_alias(DB::class, 'DB');
+        //class_alias(Manager::class, 'DB');
 
         $app->singleton('db', function () use ($settings) {
             $capsule = new Manager();
