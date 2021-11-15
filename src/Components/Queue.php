@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\DB;
 
 class Queue
 {
+    static $queue = null;
+
     public static function bootstrap()
     {
         $container = App::getInstance();
 
         (new EventServiceProvider($container))->register();
-
         $container->instance('Illuminate\Contracts\Events\Dispatcher', new Dispatcher($container));
-
         $container->bind('exception.handler', ExceptionHandler::class);
 
         $queue = new QueueManager($container);
@@ -29,15 +29,17 @@ class Queue
 
         $conn = DB::connection();
         $config = $conn->getConfig();
-        
+
         $queue->addConnection([
-            'driver'    => 'database',
-            'table'     => 'jobs', // Required for database connection
+            'driver' => 'database',
+            'table' => 'jobs', // Required for database connection
             'connection' => 'default',
-            'host'      => data_get($config, 'host', null),
+            'host' => data_get($config, 'host', null),
             'queue' => 'default',
         ], 'database');
 
         $container['queue'] = $queue->getQueueManager();
+        
+        static::$queue = $container['queue'];
     }
 }
