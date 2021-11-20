@@ -3,6 +3,7 @@
 namespace Matchstick;
 
 use Dotenv\Dotenv;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Facade;
 use Matchstick\Components\Config;
 use Matchstick\Components\Database;
@@ -23,7 +24,8 @@ class Matchstick
     {
         $defaults = [
             'base_dir' => null,
-            'config_dir' => null
+            'config_dir' => null,
+            'userResolver' => null,
         ];
         $config += $defaults;
 
@@ -36,6 +38,15 @@ class Matchstick
 
         $app = App::getInstance();
         Facade::setFacadeApplication($app);
+
+        $request = Request::capture();
+        $request->setUserResolver($config['userResolver']);
+
+        $app->instance('Illuminate\Http\Request', $request);
+
+        $app->singleton('request', function () use ($request) {
+            return $request;
+        });
 
         Database::bootstrap();
         Gate::bootstrap();
