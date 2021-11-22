@@ -16,6 +16,11 @@ class App extends Container
         return false;
     }
 
+    public function runningInConsole(): bool
+    {
+        return false;
+    }
+
     /**
      * @param string|string[] $environments
      * @return string|bool
