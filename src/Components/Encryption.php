@@ -15,7 +15,7 @@ class Encryption
     {
         $app = App::getInstance();
 
-        $key = env('ENCRYPTION_KEY');
+        $key = config('ENCRYPTION_KEY', Str::random(16));
         $encrypter = new Encrypter($key);
 
         $app->singleton('encrypter', function () use ($encrypter) {
