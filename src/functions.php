@@ -4,6 +4,7 @@ use Matchstick\App as Container;
 use Matchstick\Components\Config;
 use Matchstick\Components\View;
 use Illuminate\Contracts\Auth\Factory as AuthFactory;
+use Illuminate\Support\Carbon;
 
 if (!function_exists('app')) {
     function app($abstract = null, array $parameters = [])
@@ -135,5 +136,18 @@ if (! function_exists('request')) {
         $value = app('request')->__get($key);
 
         return is_null($value) ? value($default) : $value;
+    }
+}
+
+if (! function_exists('now')) {
+    /**
+     * Create a new Carbon instance for the current time.
+     *
+     * @param  \DateTimeZone|string|null  $tz
+     * @return \Illuminate\Support\Carbon
+     */
+    function now($tz = null)
+    {
+        return Carbon::now($tz);
     }
 }
