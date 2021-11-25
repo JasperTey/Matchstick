@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Facade;
 use Matchstick\Components\Config;
 use Matchstick\Components\Database;
 use Matchstick\Components\Encryption;
+use Matchstick\Components\Filesystem;
 use Matchstick\Components\Gate;
 use Matchstick\Components\Queue;
 use Matchstick\Components\Translation;
@@ -51,6 +52,7 @@ class Matchstick
         Database::bootstrap();
         Gate::bootstrap();
         Config::bootstrap();
+        Filesystem::bootstrap();
         View::bootstrap();
         Queue::bootstrap();
         Translation::bootstrap();

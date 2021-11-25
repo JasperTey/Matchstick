@@ -32,7 +32,8 @@
         "illuminate/queue": "^8",
         "illuminate/encryption": "^8",
         "vio/pinball": "@dev",
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "league/flysystem": "^1.0"
     },
     "require-dev": {},
     "autoload": {
