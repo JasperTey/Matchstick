@@ -24,14 +24,15 @@ class Matchstick
     public static function init($config = [])
     {
         $defaults = [
+            'env_dir' => null,
             'base_dir' => null,
             'config_dir' => null,
             'userResolver' => null,
         ];
         $config += $defaults;
 
-        if ($config['base_dir']) {
-            $dotenv = Dotenv::createImmutable($config['base_dir']);
+        if ($config['env_dir']) {
+            $dotenv = Dotenv::createImmutable($config['env_dir']);
             $dotenv->safeLoad();
         }
 
