@@ -33,7 +33,7 @@ class Config
         $repo = new Repository($tree);
         static::$repository = $repo;
 
-        class_alias(Illuminate\Support\Facades\Config::class, 'Config');
+        class_alias(\Illuminate\Support\Facades\Config::class, 'Config');
 
         // not sure about this yet
         $app->singleton('config', function () use ($repo) {
